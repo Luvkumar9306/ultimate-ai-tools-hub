@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ultimate AI Tools Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.08);--hover:rgba(255,255,255,0.08);--text:#f8fafc;--muted:#94a3b8;--a1:#38bdf8;--a2:#818cf8;--danger:#f87171}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 50%,rgba(56,189,248,0.07),transparent 25%),radial-gradient(circle at 85% 30%,rgba(129,140,248,0.07),transparent 25%);pointer-events:none;z-index:0}
+header{text-align:center;padding:50px 20px 20px;position:relative;z-index:1}
+h1{margin:0;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--muted);margin:8px 0 20px}
+.search-box{max-width:500px;margin:0 auto}
+#search{width:100%;padding:14px 20px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.05);color:var(--text);font-size:1rem;font-family:inherit;outline:none;transition:0.3s}
+#search:focus{border-color:var(--a1);box-shadow:0 0 20px rgba(56,189,248,0.15)}
+.container{max-width:1400px;margin:0 auto;padding:30px 20px;position:relative;z-index:1}
+.section{margin-bottom:45px}
+.section h2{font-size:1.6rem;font-weight:600;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--border);display:inline-block;color:#e2e8f0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:14px;text-decoration:none;color:var(--text);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);backdrop-filter:blur(12px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--a1),transparent);opacity:0;transition:opacity 0.3s}
+.card:hover{transform:translateY(-4px) scale(1.02);background:var(--hover);border-color:rgba(255,255,255,0.15);box-shadow:0 8px 25px -8px rgba(0,0,0,0.5)}
+.card:hover::before{opacity:1}
+.card strong{font-size:1.1rem;font-weight:600;margin-bottom:4px}
+.card span{font-size:0.82rem;color:var(--muted);font-weight:300}
+.risky .card{border-color:rgba(248,113,113,0.3)}
+.risky .card:hover::before{background:linear-gradient(90deg,transparent,var(--danger),transparent)}
+.risky h2{color:var(--danger);border-color:rgba(248,113,113,0.3)}
+.pending .card{border-style:dashed}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 Ultimate AI Tools Hub</h1>
+<p class="subtitle">363 curated AI & productivity tools — searchable & categorized</p>
+<nav style="display:flex;justify-content:center;gap:12px;margin:15px auto 25px;max-width:600px;">
+  <a href="index.html" style="padding:10px 22px;border-radius:25px;background:rgba(56,189,248,0.2);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);text-decoration:none;font-size:0.95rem;font-weight:600;box-shadow:0 0 15px rgba(56,189,248,0.2);">⚡ AI Tools Directory (360+)</a>
+  <a href="resources.html" style="padding:10px 22px;border-radius:25px;background:rgba(255,255,255,0.05);color:#94a3b8;border:1px solid rgba(255,255,255,0.1);text-decoration:none;font-size:0.95rem;font-weight:500;">📚 AI Guides & Resources (33+)</a>
+</nav>
+<div class="search-box"><input type="text" id="search" placeholder="🔍 Search tools..." oninput="filterCards(this.value)"></div>
+</header>
+<div class="container"><div class="section">
+<h2>🤖 AI Chat & Assistants</h2>
+<div class="grid"><a class="card" href="https://chat.openai.com" target="_blank"><strong>ChatGPT</strong><span>OpenAI conversational AI</span></a>
+<a class="card" href="https://gemini.google.com/app" target="_blank"><strong>Gemini</strong><span>Google AI assistant</span></a>
+<a class="card" href="https://claude.ai" target="_blank"><strong>Claude</strong><span>Anthropic AI assistant</span></a>
+<a class="card" href="https://www.perplexity.ai/" target="_blank"><strong>Perplexity</strong><span>AI-powered search engine</span></a>
+<a class="card" href="https://pi.ai/talk" target="_blank"><strong>Pi AI</strong><span>Personal AI companion</span></a>
+<a class="card" href="https://www.kimi.com/en/" target="_blank"><strong>Kimi AI</strong><span>Reasoning AI, great for frontend coding</span></a>
+<a class="card" href="https://librechat.ai" target="_blank"><strong>LibreChat</strong><span>Open source AI chat platform</span></a>
+<a class="card" href="https://useanything.com" target="_blank"><strong>AnythingLLM</strong><span>AI app builder with local LLMs</span></a>
+<a class="card" href="https://ollama.com" target="_blank"><strong>Ollama</strong><span>Run AI models locally on your machine</span></a>
+<a class="card" href="https://chat.atxp.ai/" target="_blank"><strong>ATXP AI</strong><span>AI chat platform</span></a>
+</div></div>
+<div class="section">
+<h2>🎨 Image Generation & Design</h2>
+<div class="grid"><a class="card" href="https://playgroundai.com/" target="_blank"><strong>Playground AI</strong><span>Creative image generation suite</span></a>
+<a class="card" href="https://firefly.adobe.com/" target="_blank"><strong>Adobe Firefly</strong><span>Adobe generative fill & image AI</span></a>
+<a class="card" href="https://openart.ai" target="_blank"><strong>OpenArt</strong><span>AI image generation platform</span></a>
+<a class="card" href="https://leonardo.ai/" target="_blank"><strong>Leonardo AI</strong><span>Production-quality AI art & assets</span></a>
+<a class="card" href="https://www.krea.ai" target="_blank"><strong>KREA AI</strong><span>Real-time AI image generation</span></a>
+<a class="card" href="https://clipdrop.co/" target="_blank"><strong>ClipDrop</strong><span>AI image editing utilities</span></a>
+<a class="card" href="https://vectorizer.ai/" target="_blank"><strong>Vectorizer</strong><span>Convert bitmap images to SVG</span></a>
+<a class="card" href="https://svg.io/" target="_blank"><strong>SVG.io</strong><span>AI vector image generation</span></a>
+<a class="card" href="https://blackforestlabs.ai/" target="_blank"><strong>Flux</strong><span>Advanced open-source AI image models</span></a>
+<a class="card" href="https://www.midjourney.com" target="_blank"><strong>Midjourney</strong><span>Premium AI image generation</span></a>
+<a class="card" href="https://stability.ai" target="_blank"><strong>Stable Diffusion</strong><span>Open-source image & video generation</span></a>
+<a class="card" href="https://www.heygen.com" target="_blank"><strong>HeyGen</strong><span>AI avatar video creation</span></a>
+<a class="card" href="https://www.hedra.com/" target="_blank"><strong>Hedra</strong><span>AI talking-head video creation</span></a>
+<a class="card" href="https://www.remove.bg/" target="_blank"><strong>Remove.bg</strong><span>AI background remover</span></a>
+<a class="card" href="https://cleanup.pictures/" target="_blank"><strong>Cleanup Pictures</strong><span>Remove objects from photos with AI</span></a>
+<a class="card" href="https://letsenhance.io/" target="_blank"><strong>LetsEnhance</strong><span>AI image upscaling & enhancement</span></a>
+<a class="card" href="https://vanceai.com/" target="_blank"><strong>VanceAI</strong><span>AI image editing suite</span></a>
+<a class="card" href="https://www.deeparteffects.com/" target="_blank"><strong>DeepArtEffects</strong><span>AI art style transfer</span></a>
+<a class="card" href="http://pfpmaker.com" target="_blank"><strong>PFPMaker</strong><span>AI profile picture maker</span></a>
+<a class="card" href="https://easy-peasy.ai" target="_blank"><strong>Easy-Peasy AI</strong><span>AI images & transcriptions</span></a>
+<a class="card" href="https://nano-banana.com" target="_blank"><strong>Nano Banana</strong><span>Image generation tool</span></a>
+<a class="card" href="https://zorqai.com" target="_blank"><strong>ZorqAI</strong><span>AI face swap tool</span></a>
+<a class="card" href="https://aiartshop.com/" target="_blank"><strong>AI Art Shop</strong><span>AI art marketplace</span></a>
+</div></div>
+<div class="section">
+<h2>🎥 Video & Animation</h2>
+<div class="grid"><a class="card" href="https://stability.ai" target="_blank"><strong>Stable Diffusion</strong><span>Open-source image & video generation</span></a>
+<a class="card" href="https://www.heygen.com" target="_blank"><strong>HeyGen</strong><span>AI avatar video creation</span></a>
+<a class="card" href="https://www.hedra.com/" target="_blank"><strong>Hedra</strong><span>AI talking-head video creation</span></a>
+<a class="card" href="https://runwayml.com/" target="_blank"><strong>Runway</strong><span>Gen-2 AI video generation</span></a>
+<a class="card" href="https://www.veed.io/" target="_blank"><strong>VEED</strong><span>Online AI video editor</span></a>
+<a class="card" href="https://pixverse.ai/" target="_blank"><strong>PixVerse</strong><span>AI video generation</span></a>
+<a class="card" href="https://lumalabs.ai" target="_blank"><strong>Luma AI</strong><span>Dream Machine — text/image to video</span></a>
+<a class="card" href="https://haiper.ai/" target="_blank"><strong>Haiper</strong><span>AI video generation</span></a>
+<a class="card" href="https://animateai.pro/" target="_blank"><strong>AnimateAI</strong><span>AI animation tool</span></a>
+<a class="card" href="https://www.immersity.ai/" target="_blank"><strong>Immersity AI</strong><span>3D immersive content from 2D</span></a>
+<a class="card" href="https://www.gentube.io/" target="_blank"><strong>GenTube</strong><span>AI video creation platform</span></a>
+<a class="card" href="https://minimax.io" target="_blank"><strong>Hailuo / MiniMax</strong><span>Cinematic AI video generation</span></a>
+<a class="card" href="https://arcads.ai" target="_blank"><strong>Arcads</strong><span>AI UGC video personas for ads</span></a>
+<a class="card" href="https://www.prismvideos.com/" target="_blank"><strong>Seedance / Prism</strong><span>AI video generation platform</span></a>
+<a class="card" href="https://lumen5.com/" target="_blank"><strong>Lumen5</strong><span>AI video creation from text/blogs</span></a>
+<a class="card" href="https://pictory.ai/" target="_blank"><strong>Pictory</strong><span>AI video from long-form text</span></a>
+<a class="card" href="https://www.synthesia.io/" target="_blank"><strong>Synthesia</strong><span>AI video with realistic avatars</span></a>
+<a class="card" href="https://www.bannerbear.com/" target="_blank"><strong>Bannerbear</strong><span>Auto-generate video/images via API</span></a>
+<a class="card" href="https://motionvid.ai" target="_blank"><strong>MotionVid AI</strong><span>AI-powered video creation</span></a>
+<a class="card" href="https://specterr.com" target="_blank"><strong>Specterr</strong><span>AI music visualizer</span></a>
+<a class="card" href="https://Narakeet.com" target="_blank"><strong>Narakeet</strong><span>Text to narrated video maker</span></a>
+<a class="card" href="#"><strong>Sjin</strong><span>Video generator (unverified)</span></a>
+<a class="card" href="https://github.com/heygen-com/hyperframes" target="_blank"><strong>Hyperframes</strong><span>HeyGen frame generation tool</span></a>
+<a class="card" href="https://github.com/heygen-com/hyperframes" target="_blank"><strong>Hyperframes</strong><span>HeyGen frame generation tool</span></a>
+</div></div>
+<div class="section">
+<h2>🎤 Voice & Audio</h2>
+<div class="grid"><a class="card" href="https://Narakeet.com" target="_blank"><strong>Narakeet</strong><span>Text to narrated video maker</span></a>
+<a class="card" href="https://elevenlabs.io" target="_blank"><strong>ElevenLabs</strong><span>AI speech synthesis & voice cloning</span></a>
+<a class="card" href="https://voicemaker.in/" target="_blank"><strong>Voicemaker</strong><span>Text to speech tool</span></a>
+<a class="card" href="https://ttsmaker.com/" target="_blank"><strong>TTSMaker</strong><span>Free text to speech online</span></a>
+<a class="card" href="https://dubverse.ai/" target="_blank"><strong>Dubverse</strong><span>AI video dubbing in 30+ languages</span></a>
+<a class="card" href="https://themetavoice.xyz/" target="_blank"><strong>MetaVoice</strong><span>Voice AI technology</span></a>
+<a class="card" href="https://ariatype.com/" target="_blank"><strong>Ariatype</strong><span>Voice typing tool</span></a>
+<a class="card" href="https://podcastle.ai/" target="_blank"><strong>Podcastle</strong><span>AI podcast editing & recording</span></a>
+<a class="card" href="https://otter.ai" target="_blank"><strong>Otter AI</strong><span>AI meeting transcription</span></a>
+<a class="card" href="https://speakai.co" target="_blank"><strong>SpeakAI</strong><span>AI speech & data analysis</span></a>
+</div></div>
+<div class="section">
+<h2>✍️ AI Writing & Copywriting</h2>
+<div class="grid"><a class="card" href="https://easy-peasy.ai" target="_blank"><strong>Easy-Peasy AI</strong><span>AI images & transcriptions</span></a>
+<a class="card" href="https://jasper.ai/" target="_blank"><strong>Jasper AI</strong><span>Enterprise AI writing platform</span></a>
+<a class="card" href="https://rytr.me/" target="_blank"><strong>Rytr</strong><span>AI writing assistant</span></a>
+<a class="card" href="https://writesonic.com/" target="_blank"><strong>WriteSonic</strong><span>AI writing & SEO content</span></a>
+<a class="card" href="https://copymatic.ai/" target="_blank"><strong>Copymatic</strong><span>AI copywriting tool</span></a>
+<a class="card" href="https://wordhero.co/" target="_blank"><strong>WordHero</strong><span>AI content writer</span></a>
+<a class="card" href="https://ai-writer.com/" target="_blank"><strong>AI Writer</strong><span>AI writing assistant bot</span></a>
+<a class="card" href="http://alicent.ai" target="_blank"><strong>Alicent AI</strong><span>Precise content creation AI</span></a>
+<a class="card" href="https://anyword.com" target="_blank"><strong>Anyword</strong><span>Persona-based marketing copy AI</span></a>
+<a class="card" href="https://www.articleforge.com/" target="_blank"><strong>Article Forge</strong><span>AI article writing bot</span></a>
+<a class="card" href="https://bertha.ai/" target="_blank"><strong>Bertha AI</strong><span>AI writing assistant</span></a>
+<a class="card" href="https://contentforge.ai/" target="_blank"><strong>ContentForge</strong><span>AI content writing assistant</span></a>
+<a class="card" href="https://copygenius.io/" target="_blank"><strong>CopyGenius</strong><span>AI copywriting assistant</span></a>
+<a class="card" href="https://app.copysmith.ai/" target="_blank"><strong>Copysmith</strong><span>AI writing assistant bot</span></a>
+<a class="card" href="https://inkforall.com/" target="_blank"><strong>INK For All</strong><span>AI writing & SEO assistant</span></a>
+<a class="card" href="https://www.outranking.io/" target="_blank"><strong>Outranking</strong><span>AI SEO writing assistant</span></a>
+<a class="card" href="https://paragraphai.com/" target="_blank"><strong>ParagraphAI</strong><span>AI writing assistant</span></a>
+<a class="card" href="https://shakespeare.ai/" target="_blank"><strong>Shakespeare AI</strong><span>AI copywriting tool</span></a>
+<a class="card" href="https://textcortex.com/" target="_blank"><strong>TextCortex</strong><span>AI writing assistant</span></a>
+<a class="card" href="https://texti.app" target="_blank"><strong>Texti</strong><span>AI text assistant</span></a>
+<a class="card" href="https://wordai.com/" target="_blank"><strong>WordAI</strong><span>AI article rewriter & spinner</span></a>
+<a class="card" href="https://yaara.ai/" target="_blank"><strong>Yaara AI</strong><span>AI content writer</span></a>
+<a class="card" href="#"><strong>Stanely</strong><span>AI ghostwriter for X/Twitter</span></a>
+</div></div>
+<div class="section">
+<h2>📊 Marketing & SEO</h2>
+<div class="grid"><a class="card" href="https://arcads.ai" target="_blank"><strong>Arcads</strong><span>AI UGC video personas for ads</span></a>
+<a class="card" href="https://www.bannerbear.com/" target="_blank"><strong>Bannerbear</strong><span>Auto-generate video/images via API</span></a>
+<a class="card" href="https://anyword.com" target="_blank"><strong>Anyword</strong><span>Persona-based marketing copy AI</span></a>
+<a class="card" href="https://inkforall.com/" target="_blank"><strong>INK For All</strong><span>AI writing & SEO assistant</span></a>
+<a class="card" href="https://www.outranking.io/" target="_blank"><strong>Outranking</strong><span>AI SEO writing assistant</span></a>
+<a class="card" href="https://surferseo.com/" target="_blank"><strong>SurferSEO</strong><span>SEO content optimization platform</span></a>
+<a class="card" href="https://dashthis.com/" target="_blank"><strong>DashThis</strong><span>Marketing data reporting dashboard</span></a>
+<a class="card" href="https://www.diib.com/" target="_blank"><strong>Diib</strong><span>SEO & site audit tool</span></a>
+<a class="card" href="https://voluum.com/" target="_blank"><strong>Voluum</strong><span>Ad tracking & optimization platform</span></a>
+<a class="card" href="https://warmbox.ai/" target="_blank"><strong>Warmbox</strong><span>Email warmup deliverability tool</span></a>
+<a class="card" href="https://referralcandy.com/" target="_blank"><strong>ReferralCandy</strong><span>Referral marketing platform</span></a>
+<a class="card" href="https://www.sonuker.com/" target="_blank"><strong>Sonuker</strong><span>YouTube growth tool</span></a>
+<a class="card" href="https://www.stormviews.net/" target="_blank"><strong>StormViews</strong><span>Social media growth service</span></a>
+<a class="card" href="https://www.subpals.com/" target="_blank"><strong>SubPals</strong><span>YouTube subscriber growth</span></a>
+<a class="card" href="https://fullenrich.com/" target="_blank"><strong>FullEnrich</strong><span>B2B lead enrichment platform</span></a>
+<a class="card" href="https://mailwave.dev" target="_blank"><strong>mailwave.dev</strong><span>Email outreach automation</span></a>
+<a class="card" href="https://abtesting.ai/" target="_blank"><strong>AB Testing AI</strong><span>AI-powered A/B testing</span></a>
+<a class="card" href="https://aiartshop.com/" target="_blank"><strong>AI Art Shop</strong><span>AI art marketplace</span></a>
+</div></div>
+<div class="section">
+<h2>💻 Developer Platforms & Tools</h2>
+<div class="grid"><a class="card" href="https://useanything.com" target="_blank"><strong>AnythingLLM</strong><span>AI app builder with local LLMs</span></a>
+<a class="card" href="https://ollama.com" target="_blank"><strong>Ollama</strong><span>Run AI models locally on your machine</span></a>
+<a class="card" href="https://huggingface.co/" target="_blank"><strong>Hugging Face</strong><span>AI model hub & community</span></a>
+<a class="card" href="https://vercel.com/" target="_blank"><strong>Vercel</strong><span>Frontend hosting & deployment</span></a>
+<a class="card" href="https://replit.com/" target="_blank"><strong>Replit</strong><span>Cloud IDE & coding platform</span></a>
+<a class="card" href="https://platform.openai.com" target="_blank"><strong>OpenAI API</strong><span>Developer platform for AI APIs</span></a>
+<a class="card" href="https://n8n.io/" target="_blank"><strong>n8n</strong><span>Visual workflow automation</span></a>
+<a class="card" href="https://render.com/" target="_blank"><strong>Render</strong><span>Cloud hosting platform</span></a>
+<a class="card" href="https://neon.tech/" target="_blank"><strong>Neon</strong><span>Serverless Postgres database</span></a>
+<a class="card" href="https://supabase.com/" target="_blank"><strong>Supabase</strong><span>Open source Firebase alternative</span></a>
+<a class="card" href="https://flowiseai.com" target="_blank"><strong>Flowise</strong><span>LangChain visual UI builder</span></a>
+<a class="card" href="https://www.bot0.dev/" target="_blank"><strong>Bot0</strong><span>AI development platform</span></a>
+<a class="card" href="https://opencove.host/" target="_blank"><strong>OpenCove</strong><span>Hosting platform</span></a>
+<a class="card" href="https://www.usejarvis.dev" target="_blank"><strong>Jarvis Dev</strong><span>Localhost development tool</span></a>
+<a class="card" href="https://www.scraperapi.com/" target="_blank"><strong>ScraperAPI</strong><span>Web scraping API</span></a>
+<a class="card" href="https://fronty.com/" target="_blank"><strong>Fronty</strong><span>Convert images to HTML/CSS code</span></a>
+<a class="card" href="https://promptlayer.com/" target="_blank"><strong>PromptLayer</strong><span>Prompt engineering & logging platform</span></a>
+<a class="card" href="https://near.ai/" target="_blank"><strong>Near.ai</strong><span>Secure AI with trusted execution (TEE)</span></a>
+<a class="card" href="https://omma.build/" target="_blank"><strong>Omma Build</strong><span>AI app builder</span></a>
+<a class="card" href="https://clerk.com/" target="_blank"><strong>Clerk</strong><span>User auth & login for apps</span></a>
+<a class="card" href="https://resend.com/" target="_blank"><strong>Resend</strong><span>Email API for apps</span></a>
+<a class="card" href="https://stripe.com" target="_blank"><strong>Stripe</strong><span>Payment processing for apps</span></a>
+<a class="card" href="https://openrouter.ai/" target="_blank"><strong>OpenRouter</strong><span>Plug any AI model into your app</span></a>
+<a class="card" href="https://github.com" target="_blank"><strong>GitHub</strong><span>Version control & collaboration</span></a>
+<a class="card" href="https://www.namecheap.com" target="_blank"><strong>Namecheap</strong><span>Domain registration ($12/yr)</span></a>
+<a class="card" href="https://posthog.com" target="_blank"><strong>PostHog</strong><span>Open-source product analytics</span></a>
+<a class="card" href="https://sentry.io" target="_blank"><strong>Sentry</strong><span>Error tracking & monitoring</span></a>
+<a class="card" href="https://analytics.google.com" target="_blank"><strong>Google Analytics</strong><span>Website traffic analytics</span></a>
+<a class="card" href="https://api.nasa.gov/" target="_blank"><strong>NASA API</strong><span>Space & astronomy data API</span></a>
+<a class="card" href="https://jules.google.com" target="_blank"><strong>Google Jules</strong><span>Google AI coding agent for GitHub</span></a>
+<a class="card" href="https://www.toolfk.com/" target="_blank"><strong>ToolFK</strong><span>Developer Swiss-army knife (JSON, regex, etc.)</span></a>
+<a class="card" href="https://github.com/she-llac/claude-counter" target="_blank"><strong>Claude Counter</strong><span>Track Claude token usage</span></a>
+<a class="card" href="https://github.com/public-apis/public-apis" target="_blank"><strong>Public APIs</strong><span>Massive directory of free public APIs</span></a>
+<a class="card" href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank"><strong>Awesome MCP Servers</strong><span>Curated list of MCP servers</span></a>
+<a class="card" href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank"><strong>Awesome Claude Skills</strong><span>100+ skills for Claude AI</span></a>
+<a class="card" href="https://github.com/thedotmack/claude-mem" target="_blank"><strong>Claude-Mem</strong><span>Persistent memory for Claude</span></a>
+<a class="card" href="https://github.com/Alishahryar1/free-claude-code" target="_blank"><strong>Free Claude Code</strong><span>Free Claude coding tool (Mac)</span></a>
+<a class="card" href="#"><strong>Unity AI</strong><span>AI tools inside Unity engine</span></a>
+<a class="card" href="https://www.toolfk.com/" target="_blank"><strong>ToolFK</strong><span>Developer Swiss-army knife (JSON, regex, etc.)</span></a>
+<a class="card" href="https://github.com/she-llac/claude-counter" target="_blank"><strong>Claude Counter</strong><span>Track Claude token usage</span></a>
+<a class="card" href="https://github.com/public-apis/public-apis" target="_blank"><strong>Public APIs</strong><span>Massive directory of free public APIs</span></a>
+<a class="card" href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank"><strong>Awesome MCP Servers</strong><span>Curated list of MCP servers</span></a>
+<a class="card" href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank"><strong>Awesome Claude Skills</strong><span>100+ skills for Claude AI</span></a>
+<a class="card" href="https://github.com/thedotmack/claude-mem" target="_blank"><strong>Claude-Mem</strong><span>Persistent memory for Claude</span></a>
+<a class="card" href="https://github.com/Alishahryar1/free-claude-code" target="_blank"><strong>Free Claude Code</strong><span>Free Claude coding tool (Mac)</span></a>
+<a class="card" href="#"><strong>Unity AI</strong><span>AI tools inside Unity engine</span></a>
+</div></div>
+<div class="section">
+<h2>☁️ Cloud & Infrastructure</h2>
+<div class="grid"><a class="card" href="https://cloudflare.com/" target="_blank"><strong>Cloudflare</strong><span>CDN, DNS & web security</span></a>
+<a class="card" href="https://workers.cloudflare.com/" target="_blank"><strong>Cloudflare Workers</strong><span>Edge computing platform</span></a>
+<a class="card" href="https://developers.cloudflare.com/d1/" target="_blank"><strong>Cloudflare D1</strong><span>Edge SQL database</span></a>
+<a class="card" href="https://developers.cloudflare.com/r2/" target="_blank"><strong>Cloudflare R2</strong><span>Zero-egress object storage</span></a>
+<a class="card" href="https://upstash.com" target="_blank"><strong>Upstash</strong><span>Serverless Redis & Kafka</span></a>
+<a class="card" href="https://pinecone.io" target="_blank"><strong>Pinecone</strong><span>Vector database for AI apps</span></a>
+</div></div>
+<div class="section">
+<h2>🏆 Hackathon & App Building</h2>
+<div class="grid"><a class="card" href="https://chat.openai.com" target="_blank"><strong>ChatGPT</strong><span>OpenAI conversational AI</span></a>
+<a class="card" href="https://claude.ai" target="_blank"><strong>Claude</strong><span>Anthropic AI assistant</span></a>
+<a class="card" href="https://huggingface.co/" target="_blank"><strong>Hugging Face</strong><span>AI model hub & community</span></a>
+<a class="card" href="https://vercel.com/" target="_blank"><strong>Vercel</strong><span>Frontend hosting & deployment</span></a>
+<a class="card" href="https://replit.com/" target="_blank"><strong>Replit</strong><span>Cloud IDE & coding platform</span></a>
+<a class="card" href="https://neon.tech/" target="_blank"><strong>Neon</strong><span>Serverless Postgres database</span></a>
+<a class="card" href="https://supabase.com/" target="_blank"><strong>Supabase</strong><span>Open source Firebase alternative</span></a>
+<a class="card" href="https://near.ai/" target="_blank"><strong>Near.ai</strong><span>Secure AI with trusted execution (TEE)</span></a>
+<a class="card" href="https://omma.build/" target="_blank"><strong>Omma Build</strong><span>AI app builder</span></a>
+<a class="card" href="https://cloudflare.com/" target="_blank"><strong>Cloudflare</strong><span>CDN, DNS & web security</span></a>
+<a class="card" href="https://upstash.com" target="_blank"><strong>Upstash</strong><span>Serverless Redis & Kafka</span></a>
+<a class="card" href="https://pinecone.io" target="_blank"><strong>Pinecone</strong><span>Vector database for AI apps</span></a>
+<a class="card" href="https://clerk.com/" target="_blank"><strong>Clerk</strong><span>User auth & login for apps</span></a>
+<a class="card" href="https://resend.com/" target="_blank"><strong>Resend</strong><span>Email API for apps</span></a>
+<a class="card" href="https://stripe.com" target="_blank"><strong>Stripe</strong><span>Payment processing for apps</span></a>
+<a class="card" href="https://openrouter.ai/" target="_blank"><strong>OpenRouter</strong><span>Plug any AI model into your app</span></a>
+<a class="card" href="https://github.com" target="_blank"><strong>GitHub</strong><span>Version control & collaboration</span></a>
+<a class="card" href="https://www.namecheap.com" target="_blank"><strong>Namecheap</strong><span>Domain registration ($12/yr)</span></a>
+<a class="card" href="https://posthog.com" target="_blank"><strong>PostHog</strong><span>Open-source product analytics</span></a>
+<a class="card" href="https://sentry.io" target="_blank"><strong>Sentry</strong><span>Error tracking & monitoring</span></a>
+<a class="card" href="https://analytics.google.com" target="_blank"><strong>Google Analytics</strong><span>Website traffic analytics</span></a>
+<a class="card" href="https://dodopayments.com" target="_blank"><strong>Dodo Payment</strong><span>Accept payments from anywhere</span></a>
+<a class="card" href="https://openbuilder.typedream.app/" target="_blank"><strong>OpenBuilders</strong><span>No-credit-card app builder</span></a>
+<a class="card" href="https://www.unicorn.studio/" target="_blank"><strong>Unicorn Studio</strong><span>No-code WebGL visual effects</span></a>
+</div></div>
+<div class="section">
+<h2>✨ Web Design, UI/UX & Plugins</h2>
+<div class="grid"><a class="card" href="https://vectorizer.ai/" target="_blank"><strong>Vectorizer</strong><span>Convert bitmap images to SVG</span></a>
+<a class="card" href="https://svg.io/" target="_blank"><strong>SVG.io</strong><span>AI vector image generation</span></a>
+<a class="card" href="https://fronty.com/" target="_blank"><strong>Fronty</strong><span>Convert images to HTML/CSS code</span></a>
+<a class="card" href="https://www.awwwards.com/" target="_blank"><strong>Awwwards</strong><span>Best web design inspiration</span></a>
+<a class="card" href="https://www.kittl.com/" target="_blank"><strong>Kittl</strong><span>Graphic design tool</span></a>
+<a class="card" href="https://codia.ai/" target="_blank"><strong>Codia AI</strong><span>Figma to code converter</span></a>
+<a class="card" href="https://magicpatterns.com/" target="_blank"><strong>Magic Patterns</strong><span>AI UI component generator</span></a>
+<a class="card" href="https://www.figma.com/community" target="_blank"><strong>FigGPT</strong><span>AI plugin for Figma</span></a>
+<a class="card" href="https://www.figma.com/community" target="_blank"><strong>Type Balance</strong><span>Typography plugin for Figma</span></a>
+<a class="card" href="https://layerize.app" target="_blank"><strong>Layerize</strong><span>AI depth image layer splitter</span></a>
+<a class="card" href="https://www.flaticon.com/" target="_blank"><strong>Flaticon</strong><span>Vector icons library</span></a>
+<a class="card" href="https://templyo.io" target="_blank"><strong>Templyo</strong><span>Framer website templates</span></a>
+<a class="card" href="https://designspells.com" target="_blank"><strong>DesignSpells</strong><span>UI/UX micro-interaction inspiration</span></a>
+<a class="card" href="https://www.unicorn.studio/" target="_blank"><strong>Unicorn Studio</strong><span>No-code WebGL visual effects</span></a>
+<a class="card" href="https://designer.microsoft.com/" target="_blank"><strong>Microsoft Designer</strong><span>AI graphic design tool</span></a>
+<a class="card" href="https://brandmark.io/" target="_blank"><strong>Brandmark</strong><span>AI logo & brand identity design</span></a>
+<a class="card" href="https://www.khroma.co/" target="_blank"><strong>Khroma</strong><span>AI color palette generator</span></a>
+<a class="card" href="https://looka.com/" target="_blank"><strong>Looka</strong><span>AI logo maker</span></a>
+<a class="card" href="https://www.dotyeti.com/" target="_blank"><strong>DotYeti</strong><span>Unlimited graphic design service</span></a>
+<a class="card" href="https://uizard.io/" target="_blank"><strong>Uizard</strong><span>AI UI design from text descriptions</span></a>
+<a class="card" href="https://www.canva.com" target="_blank"><strong>Canva</strong><span>All-in-one graphic design platform</span></a>
+<a class="card" href="https://lovart.ai" target="_blank"><strong>Lovart</strong><span>AI design tool</span></a>
+<a class="card" href="https://www.figma.com/community/plugin/1159123024924461424" target="_blank"><strong>HTML to Design</strong><span>Figma converter plugin</span></a>
+<a class="card" href="https://www.figma.com/community/plugin/1249733338498388672" target="_blank"><strong>AI to Design</strong><span>Figma AI plugin</span></a>
+<a class="card" href="https://shots.so/" target="_blank"><strong>Shots</strong><span>Beautiful device mockup generator</span></a>
+<a class="card" href="https://shots.so/" target="_blank"><strong>Shots</strong><span>Beautiful device mockup generator</span></a>
+</div></div>
+<div class="section">
+<h2>🏙️ 3D & Architecture</h2>
+<div class="grid"><a class="card" href="https://pacdora.com" target="_blank"><strong>Pacdora</strong><span>3D packaging mockup generator</span></a>
+<a class="card" href="https://maket.ai" target="_blank"><strong>Maket AI</strong><span>AI architecture & interior design</span></a>
+<a class="card" href="https://home.by.me" target="_blank"><strong>Home.by.me</strong><span>3D home design platform</span></a>
+<a class="card" href="#"><strong>Lingbot-map</strong><span>3D design tool</span></a>
+<a class="card" href="#"><strong>Secretsauce3D</strong><span>3D asset creation tool</span></a>
+<a class="card" href="https://app.pletor.ai/" target="_blank"><strong>Pletor AI</strong><span>3D AI workflow builder</span></a>
+</div></div>
+<div class="section">
+<h2>🎓 Education & Learning</h2>
+<div class="grid"><a class="card" href="https://www.hacksplaining.com/" target="_blank"><strong>Hacksplaining</strong><span>Learn web security interactively</span></a>
+<a class="card" href="https://paper2gal.com" target="_blank"><strong>Paper2Gal</strong><span>Turn papers into visual novel games</span></a>
+<a class="card" href="https://davesgames.io/stella-nova/" target="_blank"><strong>Stella Nova</strong><span>Solar system simulation game</span></a>
+<a class="card" href="https://thevfxschool.com/" target="_blank"><strong>The VFX School</strong><span>Learn visual effects online</span></a>
+<a class="card" href="https://kosmi.io" target="_blank"><strong>Kosmi</strong><span>Watch together rooms & multiplayer games</span></a>
+<a class="card" href="https://api.nasa.gov/" target="_blank"><strong>NASA API</strong><span>Space & astronomy data API</span></a>
+<a class="card" href="https://hackertyper.com/" target="_blank"><strong>HackerTyper</strong><span>Fake hacking simulator (fun)</span></a>
+<a class="card" href="#"><strong>Wagotabi</strong><span>RPG Japanese learning game</span></a>
+<a class="card" href="#"><strong>Turbo AI</strong><span>AI study tool</span></a>
+<a class="card" href="https://github.com/bradtraversy/vanillawebprojects" target="_blank"><strong>Vanilla Web Projects</strong><span>20 vanilla JS web projects</span></a>
+<a class="card" href="https://github.com/practical-tutorials/project-based-learning" target="_blank"><strong>Project Based Learning</strong><span>Learn by building real projects</span></a>
+<a class="card" href="https://github.com/TheOdinProject/curriculum" target="_blank"><strong>The Odin Project</strong><span>Full-stack web dev curriculum</span></a>
+<a class="card" href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code" target="_blank"><strong>500 AI/ML Projects</strong><span>500 AI/ML/DL projects with code</span></a>
+<a class="card" href="https://github.com/Python-World/python-mini-projects" target="_blank"><strong>Python Mini Projects</strong><span>Collection of Python mini projects</span></a>
+<a class="card" href="https://github.com/bradtraversy/vanillawebprojects" target="_blank"><strong>Vanilla Web Projects</strong><span>20 vanilla JS web projects</span></a>
+<a class="card" href="https://github.com/practical-tutorials/project-based-learning" target="_blank"><strong>Project Based Learning</strong><span>Learn by building real projects</span></a>
+<a class="card" href="https://github.com/TheOdinProject/curriculum" target="_blank"><strong>The Odin Project</strong><span>Full-stack web dev curriculum</span></a>
+<a class="card" href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code" target="_blank"><strong>500 AI/ML Projects</strong><span>500 AI/ML/DL projects with code</span></a>
+<a class="card" href="https://github.com/Python-World/python-mini-projects" target="_blank"><strong>Python Mini Projects</strong><span>Collection of Python mini projects</span></a>
+</div></div>
+<div class="section">
+<h2>📈 Presentations & Productivity</h2>
+<div class="grid"><a class="card" href="https://genspark.ai" target="_blank"><strong>GenSpark</strong><span>AI slides & presentation agent</span></a>
+<a class="card" href="https://chroniclehq.com" target="_blank"><strong>Chronicle</strong><span>AI interactive pitch deck creator</span></a>
+<a class="card" href="https://skywork.ai" target="_blank"><strong>Skywork</strong><span>AI workspace & academic PPT maker</span></a>
+<a class="card" href="https://prezi.com" target="_blank"><strong>Prezi</strong><span>Dynamic zooming presentations</span></a>
+<a class="card" href="https://flowith.io" target="_blank"><strong>Flowith Neo</strong><span>Infinite canvas AI workspace</span></a>
+<a class="card" href="https://www.plusdocs.com/" target="_blank"><strong>Plus AI</strong><span>AI plugin for MS PowerPoint</span></a>
+<a class="card" href="#"><strong>Faces.app</strong><span>Presentation tool</span></a>
+</div></div>
+<div class="section">
+<h2>🤖 AI Agents & Automation</h2>
+<div class="grid"><a class="card" href="https://n8n.io/" target="_blank"><strong>n8n</strong><span>Visual workflow automation</span></a>
+<a class="card" href="https://flowiseai.com" target="_blank"><strong>Flowise</strong><span>LangChain visual UI builder</span></a>
+<a class="card" href="https://app.pletor.ai/" target="_blank"><strong>Pletor AI</strong><span>3D AI workflow builder</span></a>
+<a class="card" href="https://flowith.io" target="_blank"><strong>Flowith Neo</strong><span>Infinite canvas AI workspace</span></a>
+<a class="card" href="https://twin.so" target="_blank"><strong>Twin</strong><span>AI agent platform</span></a>
+<a class="card" href="https://getspine.ai" target="_blank"><strong>GetSpine</strong><span>AI agents builder</span></a>
+<a class="card" href="https://kortix.com" target="_blank"><strong>Kortix</strong><span>Autonomous AI employee (open-source Suna)</span></a>
+<a class="card" href="https://jules.google.com" target="_blank"><strong>Google Jules</strong><span>Google AI coding agent for GitHub</span></a>
+<a class="card" href="https://manus.im" target="_blank"><strong>Manus AI</strong><span>Autonomous AI agent</span></a>
+<a class="card" href="https://chromewebstore.google.com/detail/capsule-hub-by-tilantra/ngeoeefidomejcdhiecidpaalfoekjbh" target="_blank"><strong>CapsuleHub</strong><span>Chrome ext — AI context switching between tools</span></a>
+<a class="card" href="#"><strong>Mulerun</strong><span>Always-on AI agent</span></a>
+<a class="card" href="#"><strong>Minimax Agent</strong><span>Autonomous AI agent</span></a>
+<a class="card" href="https://github.com/cloudflare/agentic-inbox" target="_blank"><strong>Agentic Inbox</strong><span>AI email agent by Cloudflare</span></a>
+<a class="card" href="https://github.com/cloudflare/agentic-inbox" target="_blank"><strong>Agentic Inbox</strong><span>AI email agent by Cloudflare</span></a>
+</div></div>
+<div class="section">
+<h2>🧰 Utilities & Directories</h2>
+<div class="grid"><a class="card" href="https://www.remove.bg/" target="_blank"><strong>Remove.bg</strong><span>AI background remover</span></a>
+<a class="card" href="https://otter.ai" target="_blank"><strong>Otter AI</strong><span>AI meeting transcription</span></a>
+<a class="card" href="https://kosmi.io" target="_blank"><strong>Kosmi</strong><span>Watch together rooms & multiplayer games</span></a>
+<a class="card" href="https://chromewebstore.google.com/detail/capsule-hub-by-tilantra/ngeoeefidomejcdhiecidpaalfoekjbh" target="_blank"><strong>CapsuleHub</strong><span>Chrome ext — AI context switching between tools</span></a>
+<a class="card" href="https://tinywow.com/" target="_blank"><strong>TinyWow</strong><span>Free PDF, video, image tools</span></a>
+<a class="card" href="https://shots.so/" target="_blank"><strong>Shots</strong><span>Beautiful device mockup generator</span></a>
+<a class="card" href="https://www.futurepedia.io/" target="_blank"><strong>Futurepedia</strong><span>AI tools directory</span></a>
+<a class="card" href="https://theresanaiforthat.com/" target="_blank"><strong>There's An AI For That</strong><span>AI tool finder database</span></a>
+<a class="card" href="https://promptvine.com/" target="_blank"><strong>PromptVine</strong><span>AI prompt library</span></a>
+<a class="card" href="https://latentbox.com" target="_blank"><strong>LatentBox</strong><span>Curated AI & art tools directory</span></a>
+<a class="card" href="https://dfir.blog/unfurl" target="_blank"><strong>Unfurl</strong><span>URL forensic analyzer tool</span></a>
+<a class="card" href="https://www.toolfk.com/" target="_blank"><strong>ToolFK</strong><span>Developer Swiss-army knife (JSON, regex, etc.)</span></a>
+<a class="card" href="https://mrfreetools.com" target="_blank"><strong>MrFreeTools</strong><span>Collection of free online tools</span></a>
+<a class="card" href="https://www.worldmonitor.app/" target="_blank"><strong>World Monitor</strong><span>Real-time global events dashboard</span></a>
+<a class="card" href="https://25-h.com/" target="_blank"><strong>25-h.com</strong><span>Productivity & time management tool</span></a>
+<a class="card" href="https://saurabhdaware.github.io/text-to-handwriting/" target="_blank"><strong>Text-to-Handwriting</strong><span>Convert typed text to handwriting images</span></a>
+<a class="card" href="https://meigen.ai" target="_blank"><strong>meigen.ai</strong><span>AI quote/wisdom generator</span></a>
+<a class="card" href="https://fireflies.ai/" target="_blank"><strong>Fireflies AI</strong><span>AI meeting notes & transcription</span></a>
+<a class="card" href="https://formulagenerator.app/" target="_blank"><strong>Formula Generator</strong><span>AI spreadsheet formula creator</span></a>
+<a class="card" href="https://kickresume.com/en/ai-resume-writer/" target="_blank"><strong>KickResume</strong><span>AI resume writer</span></a>
+<a class="card" href="http://namelix.com" target="_blank"><strong>Namelix</strong><span>AI business name generator</span></a>
+<a class="card" href="https://rose.ai/" target="_blank"><strong>Rose AI</strong><span>AI data analysis platform</span></a>
+<a class="card" href="http://getscribe.how/chrome" target="_blank"><strong>Scribe</strong><span>Auto process documentation tool</span></a>
+<a class="card" href="https://typewise.app" target="_blank"><strong>Typewise</strong><span>AI-powered keyboard & typing</span></a>
+<a class="card" href="https://app.wordable.io/" target="_blank"><strong>Wordable</strong><span>Google Docs to WordPress exporter</span></a>
+<a class="card" href="https://poised.com" target="_blank"><strong>Poised</strong><span>AI communication coach</span></a>
+<a class="card" href="https://www.kryptex.com/" target="_blank"><strong>Kryptex</strong><span>Auto Bitcoin miner bot</span></a>
+<a class="card" href="https://promptbase.com/" target="_blank"><strong>PromptBase</strong><span>Marketplace for buying/selling AI prompts</span></a>
+<a class="card" href="https://prompthero.com/" target="_blank"><strong>PromptHero</strong><span>AI prompt search engine (Midjourney etc.)</span></a>
+<a class="card" href="https://simplifyingai.co" target="_blank"><strong>SimplifyingAI</strong><span>AI newsletter read by 30k+ professionals</span></a>
+<a class="card" href="https://work.51ultron.com/demo/" target="_blank"><strong>51Ultron</strong><span>AI demo platform</span></a>
+<a class="card" href="http://vento.so" target="_blank"><strong>Vento</strong><span>Social/content tool</span></a>
+<a class="card" href="https://github.com/she-llac/claude-counter" target="_blank"><strong>Claude Counter</strong><span>Track Claude token usage</span></a>
+<a class="card" href="https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn" target="_blank"><strong>WebChatGPT</strong><span>ChatGPT with internet access (Chrome ext)</span></a>
+<a class="card" href="https://tinywow.com/" target="_blank"><strong>TinyWow</strong><span>Free PDF, video, image tools</span></a>
+<a class="card" href="https://shots.so/" target="_blank"><strong>Shots</strong><span>Beautiful device mockup generator</span></a>
+<a class="card" href="https://www.futurepedia.io/" target="_blank"><strong>Futurepedia</strong><span>AI tools directory</span></a>
+<a class="card" href="https://theresanaiforthat.com/" target="_blank"><strong>There's An AI For That</strong><span>AI tool finder database</span></a>
+<a class="card" href="https://promptvine.com/" target="_blank"><strong>PromptVine</strong><span>AI prompt library</span></a>
+<a class="card" href="https://latentbox.com" target="_blank"><strong>LatentBox</strong><span>Curated AI & art tools directory</span></a>
+<a class="card" href="https://dfir.blog/unfurl" target="_blank"><strong>Unfurl</strong><span>URL forensic analyzer tool</span></a>
+<a class="card" href="https://www.toolfk.com/" target="_blank"><strong>ToolFK</strong><span>Developer Swiss-army knife (JSON, regex, etc.)</span></a>
+<a class="card" href="https://mrfreetools.com" target="_blank"><strong>MrFreeTools</strong><span>Collection of free online tools</span></a>
+<a class="card" href="https://www.worldmonitor.app/" target="_blank"><strong>World Monitor</strong><span>Real-time global events dashboard</span></a>
+<a class="card" href="https://25-h.com/" target="_blank"><strong>25-h.com</strong><span>Productivity & time management tool</span></a>
+<a class="card" href="https://saurabhdaware.github.io/text-to-handwriting/" target="_blank"><strong>Text-to-Handwriting</strong><span>Convert typed text to handwriting images</span></a>
+<a class="card" href="https://meigen.ai" target="_blank"><strong>meigen.ai</strong><span>AI quote/wisdom generator</span></a>
+<a class="card" href="https://fireflies.ai/" target="_blank"><strong>Fireflies AI</strong><span>AI meeting notes & transcription</span></a>
+<a class="card" href="https://formulagenerator.app/" target="_blank"><strong>Formula Generator</strong><span>AI spreadsheet formula creator</span></a>
+<a class="card" href="https://kickresume.com/en/ai-resume-writer/" target="_blank"><strong>KickResume</strong><span>AI resume writer</span></a>
+<a class="card" href="http://namelix.com" target="_blank"><strong>Namelix</strong><span>AI business name generator</span></a>
+<a class="card" href="https://rose.ai/" target="_blank"><strong>Rose AI</strong><span>AI data analysis platform</span></a>
+<a class="card" href="http://getscribe.how/chrome" target="_blank"><strong>Scribe</strong><span>Auto process documentation tool</span></a>
+<a class="card" href="https://typewise.app" target="_blank"><strong>Typewise</strong><span>AI-powered keyboard & typing</span></a>
+<a class="card" href="https://app.wordable.io/" target="_blank"><strong>Wordable</strong><span>Google Docs to WordPress exporter</span></a>
+<a class="card" href="https://poised.com" target="_blank"><strong>Poised</strong><span>AI communication coach</span></a>
+<a class="card" href="https://www.kryptex.com/" target="_blank"><strong>Kryptex</strong><span>Auto Bitcoin miner bot</span></a>
+<a class="card" href="https://promptbase.com/" target="_blank"><strong>PromptBase</strong><span>Marketplace for buying/selling AI prompts</span></a>
+<a class="card" href="https://prompthero.com/" target="_blank"><strong>PromptHero</strong><span>AI prompt search engine (Midjourney etc.)</span></a>
+<a class="card" href="https://simplifyingai.co" target="_blank"><strong>SimplifyingAI</strong><span>AI newsletter read by 30k+ professionals</span></a>
+<a class="card" href="https://work.51ultron.com/demo/" target="_blank"><strong>51Ultron</strong><span>AI demo platform</span></a>
+<a class="card" href="http://vento.so" target="_blank"><strong>Vento</strong><span>Social/content tool</span></a>
+<a class="card" href="https://github.com/she-llac/claude-counter" target="_blank"><strong>Claude Counter</strong><span>Track Claude token usage</span></a>
+<a class="card" href="https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn" target="_blank"><strong>WebChatGPT</strong><span>ChatGPT with internet access (Chrome ext)</span></a>
+</div></div>
+<div class="section">
+<h2>📦 GitHub Repos</h2>
+<div class="grid"><a class="card" href="https://github.com/public-apis/public-apis" target="_blank"><strong>Public APIs</strong><span>Massive directory of free public APIs</span></a>
+<a class="card" href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank"><strong>Awesome MCP Servers</strong><span>Curated list of MCP servers</span></a>
+<a class="card" href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank"><strong>Awesome Claude Skills</strong><span>100+ skills for Claude AI</span></a>
+<a class="card" href="https://github.com/thedotmack/claude-mem" target="_blank"><strong>Claude-Mem</strong><span>Persistent memory for Claude</span></a>
+<a class="card" href="https://github.com/Alishahryar1/free-claude-code" target="_blank"><strong>Free Claude Code</strong><span>Free Claude coding tool (Mac)</span></a>
+<a class="card" href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_blank"><strong>AutoHedge</strong><span>AI hedge fund automation</span></a>
+<a class="card" href="https://github.com/HKUDS/Vibe-Trading" target="_blank"><strong>Vibe-Trading</strong><span>AI trading platform</span></a>
+<a class="card" href="https://github.com/Fincept-Corporation/FinceptTerminal" target="_blank"><strong>Fincept Terminal</strong><span>Financial data terminal</span></a>
+<a class="card" href="https://github.com/cloudflare/agentic-inbox" target="_blank"><strong>Agentic Inbox</strong><span>AI email agent by Cloudflare</span></a>
+<a class="card" href="https://github.com/Anil-matcha/Open-Higgsfield-AI" target="_blank"><strong>Open Higgsfield AI</strong><span>Open source Higgsfield AI</span></a>
+<a class="card" href="https://github.com/heygen-com/hyperframes" target="_blank"><strong>Hyperframes</strong><span>HeyGen frame generation tool</span></a>
+<a class="card" href="https://github.com/roboflow/rf-detr" target="_blank"><strong>RF-DETR</strong><span>Open-source object detection model</span></a>
+<a class="card" href="https://github.com/roboflow/trackers" target="_blank"><strong>Trackers</strong><span>Object tracking across video frames</span></a>
+<a class="card" href="https://github.com/bitan-del/gcode-harness" target="_blank"><strong>gcode-harness</strong><span>Code harness tool</span></a>
+<a class="card" href="https://github.com/bradtraversy/vanillawebprojects" target="_blank"><strong>Vanilla Web Projects</strong><span>20 vanilla JS web projects</span></a>
+<a class="card" href="https://github.com/practical-tutorials/project-based-learning" target="_blank"><strong>Project Based Learning</strong><span>Learn by building real projects</span></a>
+<a class="card" href="https://github.com/TheOdinProject/curriculum" target="_blank"><strong>The Odin Project</strong><span>Full-stack web dev curriculum</span></a>
+<a class="card" href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code" target="_blank"><strong>500 AI/ML Projects</strong><span>500 AI/ML/DL projects with code</span></a>
+<a class="card" href="https://github.com/Python-World/python-mini-projects" target="_blank"><strong>Python Mini Projects</strong><span>Collection of Python mini projects</span></a>
+<a class="card" href="https://github.com/teng-lin/notebooklm-py" target="_blank"><strong>NotebookLM-py</strong><span>Python version of Google NotebookLM</span></a>
+<a class="card" href="https://github.com/elder-plinius/G0DM0D3" target="_blank"><strong>GodMode3</strong><span>Multi-AI jailbreak prompts collection</span></a>
+<a class="card" href="https://github.com/SAGAR-TAMANG/friday-tony-stark-demo" target="_blank"><strong>FRIDAY Demo</strong><span>Tony Stark FRIDAY voice assistant</span></a>
+<a class="card" href="https://github.com/ethanplusai/jarvis.git" target="_blank"><strong>Jarvis</strong><span>Iron Man Jarvis AI voice assistant</span></a>
+<a class="card" href="https://github.com/public-apis/public-apis" target="_blank"><strong>Public APIs</strong><span>Massive directory of free public APIs</span></a>
+<a class="card" href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank"><strong>Awesome MCP Servers</strong><span>Curated list of MCP servers</span></a>
+<a class="card" href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank"><strong>Awesome Claude Skills</strong><span>100+ skills for Claude AI</span></a>
+<a class="card" href="https://github.com/thedotmack/claude-mem" target="_blank"><strong>Claude-Mem</strong><span>Persistent memory for Claude</span></a>
+<a class="card" href="https://github.com/Alishahryar1/free-claude-code" target="_blank"><strong>Free Claude Code</strong><span>Free Claude coding tool (Mac)</span></a>
+<a class="card" href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_blank"><strong>AutoHedge</strong><span>AI hedge fund automation</span></a>
+<a class="card" href="https://github.com/HKUDS/Vibe-Trading" target="_blank"><strong>Vibe-Trading</strong><span>AI trading platform</span></a>
+<a class="card" href="https://github.com/Fincept-Corporation/FinceptTerminal" target="_blank"><strong>Fincept Terminal</strong><span>Financial data terminal</span></a>
+<a class="card" href="https://github.com/cloudflare/agentic-inbox" target="_blank"><strong>Agentic Inbox</strong><span>AI email agent by Cloudflare</span></a>
+<a class="card" href="https://github.com/Anil-matcha/Open-Higgsfield-AI" target="_blank"><strong>Open Higgsfield AI</strong><span>Open source Higgsfield AI</span></a>
+<a class="card" href="https://github.com/heygen-com/hyperframes" target="_blank"><strong>Hyperframes</strong><span>HeyGen frame generation tool</span></a>
+<a class="card" href="https://github.com/roboflow/rf-detr" target="_blank"><strong>RF-DETR</strong><span>Open-source object detection model</span></a>
+<a class="card" href="https://github.com/roboflow/trackers" target="_blank"><strong>Trackers</strong><span>Object tracking across video frames</span></a>
+<a class="card" href="https://github.com/bitan-del/gcode-harness" target="_blank"><strong>gcode-harness</strong><span>Code harness tool</span></a>
+<a class="card" href="https://github.com/bradtraversy/vanillawebprojects" target="_blank"><strong>Vanilla Web Projects</strong><span>20 vanilla JS web projects</span></a>
+<a class="card" href="https://github.com/practical-tutorials/project-based-learning" target="_blank"><strong>Project Based Learning</strong><span>Learn by building real projects</span></a>
+<a class="card" href="https://github.com/TheOdinProject/curriculum" target="_blank"><strong>The Odin Project</strong><span>Full-stack web dev curriculum</span></a>
+<a class="card" href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code" target="_blank"><strong>500 AI/ML Projects</strong><span>500 AI/ML/DL projects with code</span></a>
+<a class="card" href="https://github.com/Python-World/python-mini-projects" target="_blank"><strong>Python Mini Projects</strong><span>Collection of Python mini projects</span></a>
+<a class="card" href="https://github.com/teng-lin/notebooklm-py" target="_blank"><strong>NotebookLM-py</strong><span>Python version of Google NotebookLM</span></a>
+<a class="card" href="https://github.com/elder-plinius/G0DM0D3" target="_blank"><strong>GodMode3</strong><span>Multi-AI jailbreak prompts collection</span></a>
+<a class="card" href="https://github.com/SAGAR-TAMANG/friday-tony-stark-demo" target="_blank"><strong>FRIDAY Demo</strong><span>Tony Stark FRIDAY voice assistant</span></a>
+<a class="card" href="https://github.com/ethanplusai/jarvis.git" target="_blank"><strong>Jarvis</strong><span>Iron Man Jarvis AI voice assistant</span></a>
+</div></div>
+<div class="section">
+<h2>📱 Mobile Apps</h2>
+<div class="grid"><a class="card" href="https://organicmaps.app" target="_blank"><strong>Organic Maps</strong><span>Offline maps — privacy-focused, no tracking</span></a>
+<a class="card" href="https://bridgefy.me" target="_blank"><strong>Bridgefy</strong><span>Offline mesh messaging without internet</span></a>
+<a class="card" href="https://www.kiwix.org" target="_blank"><strong>Kiwix</strong><span>Offline Wikipedia & knowledge access</span></a>
+<a class="card" href="https://play.google.com/store/search?q=pocket+ball+ai" target="_blank"><strong>Pocket Ball AI</strong><span>AI mobile game</span></a>
+<a class="card" href="https://apps.apple.com/us/app/penanywhere/id6760774183" target="_blank"><strong>PenAnywhere</strong><span>Mac handwriting & annotation app</span></a>
+<a class="card" href="https://organicmaps.app" target="_blank"><strong>Organic Maps</strong><span>Offline maps — privacy-focused, no tracking</span></a>
+<a class="card" href="https://bridgefy.me" target="_blank"><strong>Bridgefy</strong><span>Offline mesh messaging without internet</span></a>
+<a class="card" href="https://www.kiwix.org" target="_blank"><strong>Kiwix</strong><span>Offline Wikipedia & knowledge access</span></a>
+<a class="card" href="https://play.google.com/store/search?q=pocket+ball+ai" target="_blank"><strong>Pocket Ball AI</strong><span>AI mobile game</span></a>
+<a class="card" href="https://apps.apple.com/us/app/penanywhere/id6760774183" target="_blank"><strong>PenAnywhere</strong><span>Mac handwriting & annotation app</span></a>
+</div></div>
+<div class="section">
+<h2>💰 Freelance & Side Hustle</h2>
+<div class="grid"><a class="card" href="https://mindrift.ai" target="_blank"><strong>Mindrift.ai</strong><span>Get paid $32+/hr for AI training tasks</span></a>
+<a class="card" href="https://sidehustlesindia.com/side-hustles-database" target="_blank"><strong>Side Hustles India</strong><span>Indian side hustle database</span></a>
+<a class="card" href="https://mindrift.ai" target="_blank"><strong>Mindrift.ai</strong><span>Get paid $32+/hr for AI training tasks</span></a>
+<a class="card" href="https://sidehustlesindia.com/side-hustles-database" target="_blank"><strong>Side Hustles India</strong><span>Indian side hustle database</span></a>
+</div></div>
+<div class="section">
+<h2>🔒 Security & OSINT</h2>
+<div class="grid"><a class="card" href="https://www.hacksplaining.com/" target="_blank"><strong>Hacksplaining</strong><span>Learn web security interactively</span></a>
+<a class="card" href="https://dfir.blog/unfurl" target="_blank"><strong>Unfurl</strong><span>URL forensic analyzer tool</span></a>
+<a class="card" href="https://leakix.net" target="_blank"><strong>LeakIX</strong><span>Internet security & leak scanner</span></a>
+<a class="card" href="https://crackstation.net/" target="_blank"><strong>crackstation</strong><span>Password hash cracking</span></a>
+<a class="card" href="https://breachdirectory.org/" target="_blank"><strong>breachdirectory</strong><span>Leaked data search engine</span></a>
+<a class="card" href="https://dfir.blog/unfurl" target="_blank"><strong>Unfurl</strong><span>URL forensic analyzer tool</span></a>
+<a class="card" href="https://leakix.net" target="_blank"><strong>LeakIX</strong><span>Internet security & leak scanner</span></a>
+<a class="card" href="https://crackstation.net/" target="_blank"><strong>crackstation</strong><span>Password hash cracking</span></a>
+<a class="card" href="https://breachdirectory.org/" target="_blank"><strong>breachdirectory</strong><span>Leaked data search engine</span></a>
+</div></div>
+<div class="section risky">
+<h2>⚠️ Risky / Use With Caution</h2>
+<div class="grid"><a class="card" href="https://github.com/jseidl/GoldenEye" target="_blank"><strong>GoldenEye</strong><span>Website attack tool (DDoS)</span></a>
+<a class="card" href="https://adescargar.net/" target="_blank"><strong>adescargar</strong><span>Piracy apps</span></a>
+<a class="card" href="https://deepwebnest.com/" target="_blank"><strong>deepwebnest</strong><span>Unsafe deep web content</span></a>
+<a class="card" href="https://crackstation.net/" target="_blank"><strong>crackstation</strong><span>Password hash cracking</span></a>
+<a class="card" href="https://cheatingdaddy.com/" target="_blank"><strong>cheatingdaddy</strong><span>Unethical tool</span></a>
+<a class="card" href="https://breachdirectory.org/" target="_blank"><strong>breachdirectory</strong><span>Leaked data search engine</span></a>
+<a class="card" href="https://github.com/jseidl/GoldenEye" target="_blank"><strong>GoldenEye</strong><span>Website attack tool (DDoS)</span></a>
+<a class="card" href="https://adescargar.net/" target="_blank"><strong>adescargar</strong><span>Piracy apps</span></a>
+<a class="card" href="https://deepwebnest.com/" target="_blank"><strong>deepwebnest</strong><span>Unsafe deep web content</span></a>
+<a class="card" href="https://crackstation.net/" target="_blank"><strong>crackstation</strong><span>Password hash cracking</span></a>
+<a class="card" href="https://cheatingdaddy.com/" target="_blank"><strong>cheatingdaddy</strong><span>Unethical tool</span></a>
+<a class="card" href="https://breachdirectory.org/" target="_blank"><strong>breachdirectory</strong><span>Leaked data search engine</span></a>
+</div></div>
+<div class="section pending">
+<h2>❓ Unverified / No URL Found</h2>
+<div class="grid"><a class="card" href="#"><strong>Flux2</strong><span>Next-gen AI image models</span></a>
+<a class="card" href="#"><strong>Sjin</strong><span>Video generator (unverified)</span></a>
+<a class="card" href="#"><strong>Stanely</strong><span>AI ghostwriter for X/Twitter</span></a>
+<a class="card" href="#"><strong>Lingbot-map</strong><span>3D design tool</span></a>
+<a class="card" href="#"><strong>Secretsauce3D</strong><span>3D asset creation tool</span></a>
+<a class="card" href="#"><strong>Wagotabi</strong><span>RPG Japanese learning game</span></a>
+<a class="card" href="#"><strong>Turbo AI</strong><span>AI study tool</span></a>
+<a class="card" href="#"><strong>Faces.app</strong><span>Presentation tool</span></a>
+<a class="card" href="#"><strong>Mulerun</strong><span>Always-on AI agent</span></a>
+<a class="card" href="#"><strong>Minimax Agent</strong><span>Autonomous AI agent</span></a>
+<a class="card" href="#"><strong>Soul Hex</strong><span>Unverified tool</span></a>
+<a class="card" href="#"><strong>Project X</strong><span>Infinite computers concept</span></a>
+<a class="card" href="#"><strong>Orchids</strong><span>Unverified tool</span></a>
+<a class="card" href="#"><strong>Antigravity</strong><span>PRD tool</span></a>
+<a class="card" href="#"><strong>Mythos</strong><span>Anthropic model (unverified)</span></a>
+<a class="card" href="#"><strong>SuperDesign</strong><span>Prompt library</span></a>
+<a class="card" href="#"><strong>ProsperX7</strong><span>WiFi detection tool</span></a>
+<a class="card" href="#"><strong>ToolFR</strong><span>All AI models in one</span></a>
+<a class="card" href="#"><strong>Studs.gg</strong><span>Roblox game creation</span></a>
+<a class="card" href="#"><strong>Pencil Swarm</strong><span>Creative AI tool</span></a>
+<a class="card" href="#"><strong>FX Collax</strong><span>Data visualization tool</span></a>
+<a class="card" href="#"><strong>AIChief</strong><span>AI tool finder</span></a>
+<a class="card" href="#"><strong>Digibouquet</strong><span>Digital gift creation</span></a>
+<a class="card" href="#"><strong>MyAlmira</strong><span>Luxury budget planner</span></a>
+<a class="card" href="#"><strong>Ziniosa</strong><span>Luxury budget tool</span></a>
+<a class="card" href="#"><strong>Hera</strong><span>Motion graphics tool</span></a>
+<a class="card" href="#"><strong>AppAlchemy</strong><span>App design tool</span></a>
+<a class="card" href="#"><strong>Tile</strong><span>Native app builder</span></a>
+<a class="card" href="#"><strong>Flames</strong><span>Web builder</span></a>
+<a class="card" href="#"><strong>Google Opal</strong><span>Google tool (unreleased)</span></a>
+<a class="card" href="#"><strong>Unity AI</strong><span>AI tools inside Unity engine</span></a>
+<a class="card" href="#"><strong>GLM 5.1</strong><span>AI model — best for backend coding</span></a>
+<a class="card" href="#"><strong>Xiaomi MiMo</strong><span>AI model — best for code review</span></a>
+<a class="card" href="#"><strong>DeepSeek V4 Pro</strong><span>AI model — all-rounder</span></a>
+<a class="card" href="#"><strong>Soul Hex</strong><span>Unverified tool</span></a>
+<a class="card" href="#"><strong>Project X</strong><span>Infinite computers concept</span></a>
+<a class="card" href="#"><strong>Orchids</strong><span>Unverified tool</span></a>
+<a class="card" href="#"><strong>Antigravity</strong><span>PRD tool</span></a>
+<a class="card" href="#"><strong>Mythos</strong><span>Anthropic model (unverified)</span></a>
+<a class="card" href="#"><strong>SuperDesign</strong><span>Prompt library</span></a>
+<a class="card" href="#"><strong>ProsperX7</strong><span>WiFi detection tool</span></a>
+<a class="card" href="#"><strong>ToolFR</strong><span>All AI models in one</span></a>
+<a class="card" href="#"><strong>Studs.gg</strong><span>Roblox game creation</span></a>
+<a class="card" href="#"><strong>Pencil Swarm</strong><span>Creative AI tool</span></a>
+<a class="card" href="#"><strong>FX Collax</strong><span>Data visualization tool</span></a>
+<a class="card" href="#"><strong>AIChief</strong><span>AI tool finder</span></a>
+<a class="card" href="#"><strong>Digibouquet</strong><span>Digital gift creation</span></a>
+<a class="card" href="#"><strong>MyAlmira</strong><span>Luxury budget planner</span></a>
+<a class="card" href="#"><strong>Ziniosa</strong><span>Luxury budget tool</span></a>
+<a class="card" href="#"><strong>Hera</strong><span>Motion graphics tool</span></a>
+<a class="card" href="#"><strong>AppAlchemy</strong><span>App design tool</span></a>
+<a class="card" href="#"><strong>Tile</strong><span>Native app builder</span></a>
+<a class="card" href="#"><strong>Flames</strong><span>Web builder</span></a>
+<a class="card" href="#"><strong>Google Opal</strong><span>Google tool (unreleased)</span></a>
+<a class="card" href="#"><strong>Unity AI</strong><span>AI tools inside Unity engine</span></a>
+<a class="card" href="#"><strong>GLM 5.1</strong><span>AI model — best for backend coding</span></a>
+<a class="card" href="#"><strong>Xiaomi MiMo</strong><span>AI model — best for code review</span></a>
+<a class="card" href="#"><strong>DeepSeek V4 Pro</strong><span>AI model — all-rounder</span></a>
+</div></div>
+</div>
+<script>
+function filterCards(q){q=q.toLowerCase();document.querySelectorAll('.card').forEach(c=>{const t=(c.textContent||'').toLowerCase();c.classList.toggle('hidden',!t.includes(q))});document.querySelectorAll('.section').forEach(s=>{const visible=s.querySelectorAll('.card:not(.hidden)').length;s.classList.toggle('hidden',visible===0)})}
+</script>
+</body></html>

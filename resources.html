@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Resources Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.08);--hover:rgba(255,255,255,0.08);--text:#f8fafc;--muted:#94a3b8;--a1:#f472b6;--a2:#c084fc}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 50%,rgba(244,114,182,0.07),transparent 25%),radial-gradient(circle at 85% 30%,rgba(192,132,252,0.07),transparent 25%);pointer-events:none;z-index:0}
+header{text-align:center;padding:50px 20px 20px;position:relative;z-index:1}
+h1{margin:0;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--muted);margin:8px 0 20px}
+.search-box{max-width:500px;margin:0 auto}
+#search{width:100%;padding:14px 20px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.05);color:var(--text);font-size:1rem;font-family:inherit;outline:none;transition:0.3s}
+#search:focus{border-color:var(--a1);box-shadow:0 0 20px rgba(244,114,182,0.15)}
+.container{max-width:1400px;margin:0 auto;padding:30px 20px;position:relative;z-index:1}
+.section{margin-bottom:45px}
+.section h2{font-size:1.6rem;font-weight:600;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--border);display:inline-block;color:#e2e8f0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:14px;text-decoration:none;color:var(--text);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);backdrop-filter:blur(12px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--a1),transparent);opacity:0;transition:opacity 0.3s}
+.card:hover{transform:translateY(-4px) scale(1.02);background:var(--hover);border-color:rgba(255,255,255,0.15);box-shadow:0 8px 25px -8px rgba(0,0,0,0.5)}
+.card:hover::before{opacity:1}
+.card strong{font-size:1.05rem;font-weight:600;margin-bottom:4px}
+.card span{font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.4}
+.card em{font-style:normal;font-size:0.7rem;font-weight:600;background:rgba(244,114,182,0.15);color:var(--a1);padding:2px 8px;border-radius:6px;align-self:flex-start;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header>
+<h1>📚 AI Resources Hub</h1>
+<p class="subtitle">33 guides, prompts, PDFs & resources — searchable & categorized</p>
+<nav style="display:flex;justify-content:center;gap:12px;margin:15px auto 25px;max-width:600px;">
+  <a href="index.html" style="padding:10px 22px;border-radius:25px;background:rgba(255,255,255,0.05);color:#94a3b8;border:1px solid rgba(255,255,255,0.1);text-decoration:none;font-size:0.95rem;font-weight:500;">⚡ AI Tools Directory (360+)</a>
+  <a href="resources.html" style="padding:10px 22px;border-radius:25px;background:rgba(244,114,182,0.2);color:#f472b6;border:1px solid rgba(244,114,182,0.5);text-decoration:none;font-size:0.95rem;font-weight:600;box-shadow:0 0 15px rgba(244,114,182,0.2);">📚 AI Guides & Resources (33+)</a>
+</nav>
+<div class="search-box"><input type="text" id="search" placeholder="🔍 Search resources..." oninput="filterCards(this.value)"></div>
+</header>
+<div class="container"><div class="section">
+<h2>📝 Prompts & System Prompts</h2>
+<div class="grid"><a class="card" href="#"><em>PDF</em><strong>36 Free Claude Prompts</strong><span>36 premium prompts for marketing, sales, operations & more</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Security for Vibe Coders</strong><span>Backend validation, API keys, auth security & rate limiting</span></a>
+<a class="card" href="#"><em>PROMPT</em><strong>Gary's Boil the Ocean Prompt</strong><span>System prompt: Do it right, do it complete, ship the finished product</span></a>
+<a class="card" href="#"><em>PROMPT</em><strong>Senior Architect Prompt</strong><span>System prompt for structured AI coding with modular architecture</span></a>
+<a class="card" href="#"><em>PROMPT</em><strong>AI Project Structure Method</strong><span>Create PROJECT_CONTEXT.md, ARCHITECTURE.md, CODING_RULES.md before coding</span></a>
+</div></div>
+<div class="section">
+<h2>🏆 Hackathon & App Building Guides</h2>
+<div class="grid"><a class="card" href="#"><em>PDF</em><strong>36 Free Claude Prompts</strong><span>36 premium prompts for marketing, sales, operations & more</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Security for Vibe Coders</strong><span>Backend validation, API keys, auth security & rate limiting</span></a>
+<a class="card" href="#"><em>PROMPT</em><strong>Senior Architect Prompt</strong><span>System prompt for structured AI coding with modular architecture</span></a>
+<a class="card" href="#"><em>PROMPT</em><strong>AI Project Structure Method</strong><span>Create PROJECT_CONTEXT.md, ARCHITECTURE.md, CODING_RULES.md before coding</span></a>
+<a class="card" href="https://abhishek.build/resources/app-launch-checklist" target="_blank"><em>WEB</em><strong>App Launch Checklist</strong><span>Complete checklist for launching an app</span></a>
+<a class="card" href="https://shaded-season-2f0.notion.site/Idea-Live-App-Workflow-System-30c3ad7d4673804a8b09f61bc78a604d" target="_blank"><em>NOTION</em><strong>Idea Live App Workflow</strong><span>Full app development workflow system</span></a>
+<a class="card" href="https://www.notion.so/Security-First-Vibe-Coding-Rules-359ce6c17baf80cfa6fcc72488223688" target="_blank"><em>NOTION</em><strong>Security-First Vibe Coding</strong><span>Security rules for AI-assisted coding</span></a>
+<a class="card" href="https://www.notion.so/How-I-built-the-transforming-Optimus-Prime-scrolling-landing-page-3020d2ba3ca08016906ad60d6391ebec" target="_blank"><em>NOTION</em><strong>Optimus Prime Scroll Page</strong><span>Tutorial for transforming scroll animation</span></a>
+</div></div>
+<div class="section">
+<h2>📚 AI Guides & Tutorials</h2>
+<div class="grid"><a class="card" href="#"><em>PDF</em><strong>Build Your AI Brain Guide</strong><span>Export, visualize & search your ChatGPT/Claude history in Obsidian</span></a>
+<a class="card" href="https://flicker-celestite-7b6.notion.site/AI-STARTER-KIT-2026-2f4d180d8c8081e5bb17e2027f7d0cf6" target="_blank"><em>NOTION</em><strong>AI Starter Kit 2026</strong><span>Complete AI starter kit for 2026</span></a>
+<a class="card" href="https://docs.google.com/document/d/1CA10keLek-azBZ2Wst0U3W5sGYwSO5jcTOtL-QNPETM/mobilebasic" target="_blank"><em>GDOC</em><strong>Tools to Master AI</strong><span>Curated list of AI tools for better visuals</span></a>
+<a class="card" href="https://highfalutin-camel-f57.notion.site/OutSkill-s-Generative-AI-Mastermind-Session-1-Resource-Guide-2572c10dd7068090a415fa41db7b5d54" target="_blank"><em>NOTION</em><strong>Gen AI Mastermind Session 1</strong><span>OutSkill's Generative AI resource guide</span></a>
+<a class="card" href="https://marsh-top-656.notion.site/A-Comprehensive-Guide-to-build-AI-Bots-Custom-GPTs-Key-Tools-and-Processes-Session-3-by-Vaibhav-2599488ddc8080368939c978309f2f74" target="_blank"><em>NOTION</em><strong>Guide to AI Bots & GPTs</strong><span>Building AI bots & custom GPTs — Session 3</span></a>
+<a class="card" href="https://www.notion.so/A-Guide-to-AI-in-Filmmaking-Key-Tools-and-Processes-covered-in-the-AI-Mastermind-2572c10dd70680a2be5bfcf37c879039" target="_blank"><em>NOTION</em><strong>AI in Filmmaking</strong><span>AI tools and processes for filmmakers</span></a>
+<a class="card" href="https://theaileverage.beehiiv.com/p/sci-hub-s-new-ai-hits-different" target="_blank"><em>ARTICLE</em><strong>Sci-Hub AI Article</strong><span>Sci-Hub's new AI features deep dive</span></a>
+<a class="card" href="https://www.skills.google/course_templates/779/video/558254" target="_blank"><em>COURSE</em><strong>Google Skills Course</strong><span>Google's official AI skills course</span></a>
+<a class="card" href="#"><em>MHT</em><strong>50+ AI Tools Notion</strong><span>Massive Notion page with 70+ AI tools (writing, design, video, SEO)</span></a>
+<a class="card" href="https://shlabu.craft.me/n1w9mRgCcYrLYw" target="_blank"><em>WEB</em><strong>Shalev Resource Doc</strong><span>AI resource collection on Craft</span></a>
+</div></div>
+<div class="section">
+<h2>🔧 Setup & Workflow Guides</h2>
+<div class="grid"><a class="card" href="https://noocap.notion.site/RuFlow-Setup-Guide-Run-60-AI-Agents-Inside-Claude-Code-352508e99dda817d906deb0cd83e75d4" target="_blank"><em>NOTION</em><strong>RuFlow Setup Guide</strong><span>Run 60+ AI agents inside Claude Code</span></a>
+<a class="card" href="https://resources.leadgenman.com/ClaudeFolderSetup" target="_blank"><em>WEB</em><strong>Claude Folder Setup</strong><span>20 tools & 5 folders: Build/Think/Make/Ship/Grow OS</span></a>
+<a class="card" href="https://capsulehub.tilantra.com/docs/mcp" target="_blank"><em>WEB</em><strong>CapsuleHub MCP Guide</strong><span>Full MCP integration guide for CapsuleHub</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Codvyn Workflow Guide</strong><span>Claude → Antigravity → Stitch UI pipeline</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Vault Sample</strong><span>Sample Obsidian vault structure for AI brain</span></a>
+</div></div>
+<div class="section">
+<h2>🎨 Design & Animation Resources</h2>
+<div class="grid"><a class="card" href="https://www.notion.so/How-I-built-the-transforming-Optimus-Prime-scrolling-landing-page-3020d2ba3ca08016906ad60d6391ebec" target="_blank"><em>NOTION</em><strong>Optimus Prime Scroll Page</strong><span>Tutorial for transforming scroll animation</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Codvyn Workflow Guide</strong><span>Claude → Antigravity → Stitch UI pipeline</span></a>
+<a class="card" href="https://nomada-toast.notion.site/Jo-Mendes-Emergent-3D-website-Assets-34bdd86f735d809db0a1ff46c2907f1d" target="_blank"><em>NOTION</em><strong>Emergent 3D Assets</strong><span>Jo Mendes' 3D website assets for Emergent</span></a>
+<a class="card" href="https://the-ai-surfer.remixr.io/scroll-animation-prompt-full-walkthrough" target="_blank"><em>WEB</em><strong>Scroll Animation Prompt</strong><span>Full walkthrough for AI scroll animations</span></a>
+<a class="card" href="https://www.atipik.pro/resources" target="_blank"><em>WEB</em><strong>Atipik Animation Resources</strong><span>Website animation resources & tools</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Liquid Effect Component</strong><span>React threejs liquid background animation code</span></a>
+<a class="card" href="https://www.framer.com/marketplace/components/image-hover-reveal/" target="_blank"><em>WEB</em><strong>Framer Assets PT.12</strong><span>5 free Framer marketplace components</span></a>
+<a class="card" href="https://ameen-abdullah.dev/" target="_blank"><em>WEB</em><strong>Ameen Abdullah Portfolio</strong><span>Developer portfolio for inspiration</span></a>
+</div></div>
+<div class="section">
+<h2>📦 Misc / Other</h2>
+<div class="grid"><a class="card" href="https://theaileverage.beehiiv.com/p/claude-fitness-cheatsheet" target="_blank"><em>ARTICLE</em><strong>Claude Fitness Cheatsheet</strong><span>Using Claude for fitness planning</span></a>
+<a class="card" href="#"><em>PDF</em><strong>Consciousness Blueprint</strong><span>50+ mind exercises for focus & meditation</span></a>
+<a class="card" href="#"><em>ZIP</em><strong>Clicky.app</strong><span>macOS desktop application</span></a>
+</div></div>
+</div>
+<script>
+function filterCards(q){q=q.toLowerCase();document.querySelectorAll('.card').forEach(c=>{const t=(c.textContent||'').toLowerCase();c.classList.toggle('hidden',!t.includes(q))});document.querySelectorAll('.section').forEach(s=>{const visible=s.querySelectorAll('.card:not(.hidden)').length;s.classList.toggle('hidden',visible===0)})}
+</script>
+</body></html>
